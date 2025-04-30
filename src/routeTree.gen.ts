@@ -11,10 +11,17 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as QuizImport } from './routes/quiz'
 import { Route as StartImport } from './routes/$start'
 import { Route as IndexImport } from './routes/index'
 
 // Create/Update Routes
+
+const QuizRoute = QuizImport.update({
+  id: '/quiz',
+  path: '/quiz',
+  getParentRoute: () => rootRoute,
+} as any)
 
 const StartRoute = StartImport.update({
   id: '/$start',
@@ -46,6 +53,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof StartImport
       parentRoute: typeof rootRoute
     }
+    '/quiz': {
+      id: '/quiz'
+      path: '/quiz'
+      fullPath: '/quiz'
+      preLoaderRoute: typeof QuizImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
@@ -54,36 +68,41 @@ declare module '@tanstack/react-router' {
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/$start': typeof StartRoute
+  '/quiz': typeof QuizRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/$start': typeof StartRoute
+  '/quiz': typeof QuizRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
   '/$start': typeof StartRoute
+  '/quiz': typeof QuizRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/$start'
+  fullPaths: '/' | '/$start' | '/quiz'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/$start'
-  id: '__root__' | '/' | '/$start'
+  to: '/' | '/$start' | '/quiz'
+  id: '__root__' | '/' | '/$start' | '/quiz'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   StartRoute: typeof StartRoute
+  QuizRoute: typeof QuizRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   StartRoute: StartRoute,
+  QuizRoute: QuizRoute,
 }
 
 export const routeTree = rootRoute
@@ -97,7 +116,8 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
-        "/$start"
+        "/$start",
+        "/quiz"
       ]
     },
     "/": {
@@ -105,6 +125,9 @@ export const routeTree = rootRoute
     },
     "/$start": {
       "filePath": "$start.tsx"
+    },
+    "/quiz": {
+      "filePath": "quiz.tsx"
     }
   }
 }
