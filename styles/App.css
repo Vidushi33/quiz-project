@@ -1,0 +1,7 @@
+@import "tailwindcss";
+@layer theme, base, components, utilities;
+
+@theme{
+    --color-primary-pink:#D55A96;
+    --color-background:#FCE4EC;
+}
