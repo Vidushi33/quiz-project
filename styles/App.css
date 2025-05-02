@@ -2,6 +2,21 @@
 @layer theme, base, components, utilities;
 
 @theme{
-    --color-primary-pink:#D55A96;
-    --color-background:#FCE4EC;
+    /* --color-primary:#D55A96;
+    --color-background:#E0F7FA;
+     */
+/* 
+     --color-foreground:#FFFFFF;
+     --color-background:#e0f7fa;
+     --color-active:#48cae4;
+     --color-primary:#212121;
+     --color-secondary:#b0bec5; */
+
+     --color-foreground:#fafafa;
+     --color-background:#fce4ec;
+     --color-active:#ec407a;
+     --color-primary:#212121;
+     --color-secondary:#ec407a;
+     --color-brand:#ad1457;
+     --color-heading: #880e4f; 
 }

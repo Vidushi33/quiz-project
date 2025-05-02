@@ -11,17 +11,17 @@ export default function Header() {
         <div className="mx-auto flex items-center justify-between h-16">
           <div className="flex items-center gap-2">
             <img src="/logo.png" alt="QuizLogo" className="h-8 w-8" />
-            <span className="font-bold text-xl text-primary-pink text-shadow-lg">QuizMaster</span>
+            <span className="font-bold text-xl text-brand text-shadow-lg">QuizMaster</span>
           </div>
           <nav className="hidden md:flex gap-6 items-center">
-            <Link to="/" className="text-gray-700 text-shadow-lg hover:text-primary-pink">
+            <Link to="/" className="text-primary text-shadow-lg hover:text-active">
               Home
             </Link>
-            <Link to="/" className="text-gray-700 text-shadow-lg hover:text-primary-pink">
+            <Link to="/" className="text-primary text-shadow-lg hover:text-active">
               Results
             </Link>
             <div className="relative group">
-              <button className="flex items-center gap-1 text-shadow-lg text-gray-700 hover:text-primary-pink">
+              <button className="flex items-center gap-1 text-shadow-lg text-primary hover:text-active">
                 Profile <FaChevronDown className="w-4 h-4" />
               </button>
               <div className="absolute top-full right-0 mt-2 w-40  bg-white border rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity">
@@ -35,7 +35,7 @@ export default function Header() {
             </div>
           </nav>
           <button
-            className="md:hidden text-gray-700"
+            className="md:hidden text-primary"
             onClick={() => setMenuOpen(!menuOpen)}
           >
             {menuOpen ? (
@@ -49,19 +49,19 @@ export default function Header() {
           <div className="md:hidden bg-white px-4 pb-4">
             <a
               href="#"
-              className="block py-2 text-gray-700 hover:text-primary-pink"
+              className="block py-2 text-primary hover:text-active"
             >
               Home
             </a>
             <a
               href="#"
-              className="block py-2 text-gray-700 hover:text-primary-pink"
+              className="block py-2 text-primary hover:text-active"
             >
               Results
             </a>
             <a
               href="#"
-              className="block py-2 text-gray-700 hover:text-primary-pink"
+              className="block py-2 text-primary hover:text-active"
             >
               Profile
             </a>
